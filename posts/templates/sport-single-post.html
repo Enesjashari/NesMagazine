@@ -9,9 +9,31 @@
   <p><span class="firstcharacter"></span>{{sportpost.prefix}}</p>
 
   <figure class="my-4">
-    <img src="{{sportpost.image.url}}" width="800" style="margin-left:80px ;" alt="No Photo" class="img-fluid">
+    <img src="{{sportpost.image.url}}" width="800"  alt="No Photo" class="img-fluid">
   </figure>
   <p>{{sportpost.body}}</p>
+  {% if sportpost.image2.url  %}
+  <figure class="my-4">
+    <img src="{{sportpost.image2.url}}" width="800"  alt="" class="img-fluid">
+  </figure>
+  {% endif %}
+  {% if sportpost.body2  %}
+  <p>{{sportpost.body2}}</p>
+  {% endif %}
+  {% if sportpost.image3.url   %}
+    <figure class="my-4">
+      <img src="{{sportpost.image3.url}}" width="800"  alt="" class="img-fluid">
+    </figure>
+  {% else %}
+  
+  {% endif %}
+  {% load embed_video_tags %}
+  {% video sportpost.video '368x315' %}
+
+
+  {% if sportpost.body3  %}
+  <p>{{sportpost.body3}}</p>
+  {% endif %}
 </div><!-- End Single Post Content -->
 {% endblock %}
 

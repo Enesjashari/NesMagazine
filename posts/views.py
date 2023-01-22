@@ -236,6 +236,8 @@ def tech_single(request,pin):
     sport_post_v = Sport.objects.all()[::-1] 
     sport_post_trending = sport_post_v[:3]
 
+
+
     context = {
         'techpost':techpost,
         "showbiz_post_1":showbiz_post_1,
@@ -246,6 +248,7 @@ def tech_single(request,pin):
         "posts":posts,
         "travel_post":travel_post,
         "header_post":header_post,
+
         #end nav-bar-posts
 
     }

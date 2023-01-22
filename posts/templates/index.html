@@ -4,6 +4,8 @@
 <html lang="en">
 
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2768553920905431"
+     crossorigin="anonymous"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ36VWJSBS"></script>
@@ -28,8 +30,8 @@
 
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="{% static 'assets\img\nes-low-resolution-logo-black-on-transparent-background.png' %}" rel="icon">
+  <link href="{% static 'assets\img\nes-low-resolution-logo-black-on-transparent-background.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,8 +67,8 @@
 
       <a href="{% url 'index' %}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="{% static 'assets/img/logo.png' %}" alt=""> -->
-        <img src="{% static 'assets\img\nes-low-resolution-logo-black-on-transparent-background.png' %}"  width="100px" height="60px" alt="404" >
+        <img src="{% static 'assets\img\nes-low-resolution-logo-black-on-transparent-background.png' %}" alt="">
+        <!-- <img src="{% static 'assets\img\nes-low-resolution-logo-black-on-transparent-background.png' %}"  width="100px" height="60px" alt="404" > -->
         <!-- <h1 style="margin-left: -10px;" >Nes Magazine</h1> -->
       </a>
 
@@ -98,7 +100,7 @@
           <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
-      
+
       <div class="position-relative"  >
 
         <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
@@ -111,7 +113,7 @@
           <input class="form-control me-2" id="searchquerry" type="search" name="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-        
+
         <a href="#" class="mx-2 js-search-open"><span class="bi-searchx"></span></a>
         <i class="bi bi-list mobile-nav-toggle"></i>
 
@@ -212,7 +214,7 @@
                   <div class="post-meta"><span class="date">{{sport.category}}</span> <span class="mx-1">&bullet;</span> <span>{{sport.created_at}}</span></div>
                   <h2><a href="{% url 'sport-single' sport.id  %}">{{sport.title |capfirst}}</a></h2>
                 </div>
-                {% endfor %}  
+                {% endfor %}
               </div>
 
               <!-- Trending Section -->
@@ -242,7 +244,7 @@
                         <span class="author">Esther Howard</span>
                       </a>
                     </li>
-                    
+
                     <li>
                       <a href="{% url 'sport-single' sport_post_nav_1.id %}">
                         <span class="number">4</span>
@@ -581,7 +583,7 @@
         <div class="row g-5">
           <div class="col-lg-4">
             <h3 class="footer-heading">About Nes Magazine</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ab, perspiciatis beatae autem deleniti voluptate nulla a dolores, exercitationem eveniet libero laudantium recusandae officiis qui aliquid blanditiis omnis quae. Explicabo?</p>
+            <p>Nes Magazine is an online portal/magazine founded in December 2022. The idea for Nes Magazine began to take shape in February 2022, and it was founded with the goal of providing the latest news, reviews, and information about the AI  updates for community. The magazine is dedicated to covering the latest advancements and trends in the field of Media & Technology. Nes Magazine aims to be a valuable resource for AI enthusiasts, researchers and professionals, providing high-quality content, expert analysis, and in-depth coverage of the most important issues and developments in the field. It is a platform for community to stay informed, connected and engaged with the latest developments in the fields.</p>
             <p><a href="{% url 'about-us' %}" class="footer-link-more">Learn More</a></p>
           </div>
           <div class="col-6 col-lg-2">
