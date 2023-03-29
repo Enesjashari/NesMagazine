@@ -34,7 +34,6 @@ class HeaderPost(models.Model):
     image3 = models.ImageField(blank=True,default='media/images/No_image/No_image_available.png',upload_to = "images/")
     category = models.CharField(max_length=1000,default = None)
     created_at =models.DateTimeField(default=datetime.now, blank=True)
-    image = models.ImageField(blank=True,default='media/images/No_image/No_image_available.png',upload_to = "images/")
     video = EmbedVideoField( blank=True , default=" ")  # same like models.URLField()
     def __str__(self):
         return self.title[:]
@@ -49,7 +48,6 @@ class Showbiz(models.Model):
     image3 = models.ImageField(blank=True,default='media/images/No_image/No_image_available.png',upload_to = "images/")
     category = models.CharField(max_length=1000,default = "Showbiz")
     created_at =models.DateTimeField(default=datetime.now, blank=True)
-    image = models.ImageField(blank=True,default='media/images/No_image/No_image_available.png',upload_to = "images/")
     video = EmbedVideoField( blank=True , default=" ")  # same like models.URLField()
 
     def __str__(self):
@@ -66,7 +64,6 @@ class Travel(models.Model):
     image3 = models.ImageField(blank=True,default='media/images/No_image/No_image_available.png',upload_to = "images/")
     category = models.CharField(max_length=1000,default = "Travel")
     created_at =models.DateTimeField(default=datetime.now, blank=True)
-    image = models.ImageField(blank=True,default='media/images/No_image/No_image_available.png',upload_to = "images/")
     video = EmbedVideoField( blank=True,default=" ")  # same like models.URLField()
 
     def __str__(self):
@@ -82,7 +79,6 @@ class Sport(models.Model):
     image3 = models.ImageField(blank=True,default='media/images/No_image/No_image_available.png',upload_to = "images/")
     category = models.CharField(max_length=1000,default = "Sport")
     created_at =models.DateTimeField(default=datetime.now, blank=True)
-    image = models.ImageField(blank=True,default='media/images/No_image/No_image_available.png',upload_to = "images/")
     video = EmbedVideoField( blank=True , default=" ")  # same like models.URLField()
 
     def __str__(self):

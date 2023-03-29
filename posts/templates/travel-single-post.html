@@ -1,5 +1,11 @@
 {% extends 'single-post.html' %}
 
+{% block linkshare %}
+    <meta property="og:title" content="{{ travelpost.title }}">
+    <meta property="og:description" content="{{ travelpost.description }}">
+    <meta property="og:image" content="{{ travelpost.image.url }}">
+{% endblock %}
+
 
 {% block single %}
 <!-- ======= Single Post Content ======= -->
@@ -9,7 +15,7 @@
   <p><span class="firstcharacter"></span>{{travelpost.prefix}}</p>
 
   <figure class="my-4">
-    <img src="{{travelpost.image.url}}" width="800" style="margin-left:80px ;" alt="No Photo" class="img-fluid">
+    <img src="{{travelpost.image.url}}" width="800"  alt="{{travelpost.title}}" class="img-fluid">
   </figure>
   <p>{{travelpost.body}}</p>
 
@@ -26,7 +32,7 @@
       <img src="{{travelpost.image3.url}}" width="800"  alt="" class="img-fluid">
     </figure>
   {% else %}
-  
+
   {% endif %}
   {% load embed_video_tags %}
   {% video travelpost.video '368x315' %}
