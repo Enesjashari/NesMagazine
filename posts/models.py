@@ -2,6 +2,7 @@ from distutils.command.upload import upload
 from email.policy import default
 from django.db import models
 from datetime import datetime
+from embed_video.fields import EmbedVideoField
 
 
 
