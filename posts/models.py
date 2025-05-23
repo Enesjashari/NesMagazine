@@ -21,9 +21,9 @@ class Tech(models.Model):
     created_at =models.DateTimeField(default=datetime.now, blank=True)
     video = EmbedVideoField( blank=True , default=" ")  # same like models.URLField()
 
-    def __str__(self):
-        return self.title[:]
 
+    def __str__(self):
+        return self.title
 
 class HeaderPost(models.Model):
     title = models.CharField(max_length=555)

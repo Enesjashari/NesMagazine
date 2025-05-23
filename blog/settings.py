@@ -26,7 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!l4i)6@2a*px@)@@+)r7$2(g+lnm-tez_$w^4cohdc=#b9@17o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+DEBUG = False
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -34,7 +36,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'jazzmin',
+    "django.contrib.admin",
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -43,8 +46,9 @@ INSTALLED_APPS = [
     'posts',
     'embed_video',
 ]
-
+DEBUG = True
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -134,6 +138,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.template.context_processors.request',
 )
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

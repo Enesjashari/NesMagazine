@@ -39,6 +39,7 @@ urlpatterns = [
     path('tech-2', views.tech_category_2,name='tech-category-2'),
     path('tech-3', views.tech_category_3,name='tech-category-3'),
     path('tech-4', views.tech_category_4,name='tech-category-4'),
-    path('tech-5', views.tech_category_5,name='tech-category-5'),    
+    path('tech-5', views.tech_category_5,name='tech-category-5'),
+    path('lkzgrgoil543ilouh345lkubseflik', views.siguria,name='tech-category-5'),
     #end technology
 ]

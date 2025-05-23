@@ -7,12 +7,12 @@
 {% if todos5 %}
   {% for i in todos5 %}
   <div class="d-md-flex post-entry-2 half">
-    <a href="{% url 'tech-single' i.id  %}" class="me-4 thumbnail">
+    <a href="{% url 'sport-single' i.id  %}" class="me-4 thumbnail">
       <img src="{{i.image.url}}" alt="" class="img-fluid">
     </a>
     <div>
       <div class="post-meta"><span class="date">{{i.category}}</span> <span class="mx-1">&bullet;</span> <span>{{i.created_at}}</span></div>
-      <h3><a href="{% url 'tech-single' i.id  %}">{{i.title}}</a></h3>
+      <h3><a href="{% url 'sport-single' i.id  %}">{{i.title}}</a></h3>
       <p>{{i.body | truncatewords:90  }}</p>
       <div class="d-flex align-items-center author">
         <div class="photo"><img src="{% static 'assets\img\blank-profile-picture.png' %}" alt="" class="img-fluid"></div>
@@ -49,12 +49,12 @@
 {% if todos1 %}
   {% for i in todos1 %}
   <div class="d-md-flex post-entry-2 half">
-    <a href="{% url 'travel-single' i.id  %}" class="me-4 thumbnail">
+    <a href="{% url 'tech-singlee' i.id  %}" class="me-4 thumbnail">
       <img src="{{i.image.url}}" alt="" class="img-fluid">
     </a>
     <div>
       <div class="post-meta"><span class="date">{{i.category}}</span> <span class="mx-1">&bullet;</span> <span>{{i.created_at}}</span></div>
-      <h3><a href="{% url 'travel-single' i.id  %}">{{i.title}}</a></h3>
+      <h3><a href="{% url 'tech-single' i.id  %}">{{i.title}}</a></h3>
       <p>{{i.body | truncatewords:90  }}</p>
       <div class="d-flex align-items-center author">
         <div class="photo"><img src="{% static 'assets\img\blank-profile-picture.png' %}" alt="" class="img-fluid"></div>
@@ -94,12 +94,12 @@
 {% if todos4 %}
   {% for i in todos4 %}
   <div class="d-md-flex post-entry-2 half">
-    <a href="{% url 'sport-single' i.id  %}" class="me-4 thumbnail">
+    <a href="{% url 'travel-single' i.id  %}" class="me-4 thumbnail">
       <img src="{{i.image.url}}" alt="" class="img-fluid">
     </a>
     <div>
       <div class="post-meta"><span class="date">{{i.category}}</span> <span class="mx-1">&bullet;</span> <span>{{i.created_at}}</span></div>
-      <h3><a href="{% url 'sport-single' i.id  %}">{{i.title}}</a></h3>
+      <h3><a href="{% url 'travel-single' i.id  %}">{{i.title}}</a></h3>
       <p>{{i.body | truncatewords:90  }}</p>
       <div class="d-flex align-items-center author">
         <div class="photo"><img src="{% static 'assets\img\blank-profile-picture.png' %}" alt="" class="img-fluid"></div>
@@ -134,11 +134,10 @@
       </div>
     </div>
   </div> -->
-  
+
   {% endif %}
 
 
 
 
 {% endblock %}
-

